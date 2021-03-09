@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">FurnitureAR</string>
+
+    <string-array name = "my_items">
+        <item>first</item>
+        <item>second</item>
+        <item>third</item>
+    </string-array>
+</resources>
