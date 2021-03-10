@@ -1,10 +1,72 @@
 package com.teamapp16.furniturear;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.media.Image;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+
+
 
 public class MainActivity extends AppCompatActivity {
+
+    public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ItemViewHolder> {
+        /*private final ArrayList<String[]> itemList;
+        private final ArrayList<int[]> imageList;*/
+        private final String[] itemList;
+        private final int[] imageList;
+        private LayoutInflater inflater;
+
+        public ItemListAdapter(Context context, String[] itemList, int[] imageList) {
+            inflater = LayoutInflater.from(context);
+            this.itemList = itemList;
+            this.imageList = imageList;
+        }
+
+        @NonNull
+        @Override
+        public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            View itemView = inflater.inflate(R.layout.furniture_item,parent,false);
+            return new ItemViewHolder(itemView,this);
+
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
+            /*String[] nameList = itemList.get(position);
+            int[] imgList = imageList.get(position);*/
+            holder.nameTV.setText(itemList[position]);
+            holder.imageIV.setImageResource(imageList[position]);
+
+        }
+
+        @Override
+        public int getItemCount() {
+            return itemList.length;
+        }
+
+        public class ItemViewHolder extends RecyclerView.ViewHolder {
+            public final TextView nameTV;
+            public final ImageView imageIV;
+            final ItemListAdapter adapter;
+
+            public ItemViewHolder(@NonNull View itemView, ItemListAdapter adapter) {
+                super(itemView);
+                nameTV = itemView.findViewById(R.id.name);
+                imageIV = itemView.findViewById(R.id.displayImage);
+                this.adapter = adapter;
+            }
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
