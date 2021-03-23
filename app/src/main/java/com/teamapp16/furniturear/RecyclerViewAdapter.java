@@ -10,17 +10,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ItemViewHolder> {
-    private final ArrayList<String[]> itemList;
-    private final ArrayList<Integer[]> imageList;
+    private final ArrayList<String> itemList;
+    private final ArrayList<String> imageList;
     private Context mContext;
     private LayoutInflater inflater;
 
-    public RecyclerViewAdapter(Context context, ArrayList<String[]> itemList,  ArrayList<Integer[]> imageList) {
+    public RecyclerViewAdapter(Context context, ArrayList<String> itemList,  ArrayList<String> imageList) {
         inflater = LayoutInflater.from(context);
         this.itemList = itemList;
         this.imageList = imageList;
@@ -37,8 +40,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, final int position) {
-        String[] item = itemList.get(position);
-        holder.nameTV.setText(item[0]);
+        Glide.with(mContext)
+                .asBitmap()
+                .load(imageList.get(position))
+                .into(holder.imageIV);
+        holder.nameTV.setText(itemList.get(position));
+
+        //String[] item = itemList.get(position);
+        //holder.nameTV.setText(item[0]);
+
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

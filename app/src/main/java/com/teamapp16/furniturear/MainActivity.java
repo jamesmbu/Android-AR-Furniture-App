@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
     // Attributes for RecyclerView
     //private RecyclerView recyclerView;
-    ArrayList<String[]> itemList = new ArrayList();
-    ArrayList<Integer[]> imageList = new ArrayList();
+    ArrayList<String> itemList = new ArrayList();
+    ArrayList<String> imageList = new ArrayList();
     //____________________________
 
 
@@ -34,10 +34,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // test data for recyclerview
         for (int i = 0; i < 20; i++) {
-            itemList.add(new String[] {"Table"});
-            itemList.add(new String[] {"Chair"});
+
         }
-        InitializeRecyclerView();
+        InitializeBitmaps();
+
 
     }
     public void InitializeRecyclerView() {
@@ -45,6 +45,15 @@ public class MainActivity extends AppCompatActivity {
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, itemList, imageList);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+    public void InitializeBitmaps() {
+        imageList.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
+        itemList.add("Chair");
+        imageList.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
+        itemList.add("Table");
+        imageList.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
+        itemList.add("Bed");
+        InitializeRecyclerView();
     }
     /*public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ItemViewHolder> {
         private final ArrayList<String[]> itemList;
