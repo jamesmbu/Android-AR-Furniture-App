@@ -71,7 +71,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             super(itemView);
             nameTV = itemView.findViewById(R.id.name);
             imageIV = itemView.findViewById(R.id.displayImage);
-            parentLayout = itemView.findViewById(R.id.layout);
+            parentLayout = itemView.findViewById(R.id.parent_layout);
         }
     }
 }
