@@ -22,8 +22,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     // Attributes for RecyclerView
-    private RecyclerView recyclerView;
-    private ItemListAdapter adapter;
+    //private RecyclerView recyclerView;
     ArrayList<String[]> itemList = new ArrayList();
     ArrayList<Integer[]> imageList = new ArrayList();
     //____________________________
@@ -38,18 +37,16 @@ public class MainActivity extends AppCompatActivity {
             itemList.add(new String[] {"Table"});
             itemList.add(new String[] {"Chair"});
         }
-        // connect the recyclerview
-        // Create reference to the RecyclerView.
-        recyclerView = findViewById(R.id.recyclerView);
-        // Create an adapter
-        adapter = new ItemListAdapter(this,itemList, imageList);
-        // Connect adapter with RecyclerView
-        recyclerView.setAdapter(adapter);
-        // Set layout for the RecyclerView
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        InitializeRecyclerView();
 
     }
-    public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ItemViewHolder> {
+    public void InitializeRecyclerView() {
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, itemList, imageList);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+    /*public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ItemViewHolder> {
         private final ArrayList<String[]> itemList;
         private final ArrayList<Integer[]> imageList;
         //private final String[] itemList;
@@ -71,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
-            /*String[] nameList = itemList.get(position);
-            int[] imgList = imageList.get(position);*/
+            *//*String[] nameList = itemList.get(position);
+            int[] imgList = imageList.get(position);*//*
             String[] item = itemList.get(position);
             holder.nameTV.setText(item[0]);
             //holder.imageIV.setImageResource();
@@ -95,8 +92,9 @@ public class MainActivity extends AppCompatActivity {
                 imageIV = itemView.findViewById(R.id.displayImage);
                 this.adapter = adapter;
             }
-        }
-    }
-
+        }*/
 
 }
+
+
+
