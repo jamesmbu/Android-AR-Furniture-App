@@ -22,10 +22,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     // Attributes for RecyclerView
-    private RecyclerView recyclerView;
-    private ItemListAdapter adapter;
-    ArrayList<String[]> itemList = new ArrayList();
-    ArrayList<Integer[]> imageList = new ArrayList();
+    private ArrayList<String> itemNames = new ArrayList();
+    private ArrayList<String> imageURLs = new ArrayList();
     //____________________________
 
 
@@ -34,68 +32,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // test data for recyclerview
-        for (int i = 0; i < 20; i++) {
-            itemList.add(new String[] {"Table"});
-            itemList.add(new String[] {"Chair"});
-        }
-        // connect the recyclerview
-        // Create reference to the RecyclerView.
-        recyclerView = findViewById(R.id.recyclerView);
-        // Create an adapter
-        adapter = new ItemListAdapter(this,itemList, imageList);
-        // Connect adapter with RecyclerView
-        recyclerView.setAdapter(adapter);
-        // Set layout for the RecyclerView
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        InitializeBitmaps();
 
     }
-    public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ItemViewHolder> {
-        private final ArrayList<String[]> itemList;
-        private final ArrayList<Integer[]> imageList;
-        //private final String[] itemList;
-        //private final int[] imageList;
-        private LayoutInflater inflater;
 
-        public ItemListAdapter(Context context, ArrayList<String[]> itemList,  ArrayList<Integer[]> imageList) {
-            inflater = LayoutInflater.from(context);
-            this.itemList = itemList;
-            this.imageList = imageList;
-        }
-
-        @NonNull
-        @Override
-        public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View itemView = inflater.inflate(R.layout.furniture_item,parent,false);
-            return new ItemViewHolder(itemView,this);
-        }
-
-        @Override
-        public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
-            /*String[] nameList = itemList.get(position);
-            int[] imgList = imageList.get(position);*/
-            String[] item = itemList.get(position);
-            holder.nameTV.setText(item[0]);
-            //holder.imageIV.setImageResource();
-
-        }
-
-        @Override
-        public int getItemCount() {
-            return itemList.size();
-        }
-
-        public class ItemViewHolder extends RecyclerView.ViewHolder {
-            public final TextView nameTV;
-            public final ImageView imageIV;
-            final ItemListAdapter adapter;
-
-            public ItemViewHolder(@NonNull View itemView, ItemListAdapter adapter) {
-                super(itemView);
-                nameTV = itemView.findViewById(R.id.name);
-                imageIV = itemView.findViewById(R.id.displayImage);
-                this.adapter = adapter;
-            }
-        }
+    private void InitializeBitmaps(){
+        imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
+        itemNames.add("Chair");
+        imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
+        itemNames.add("Chair");
+        imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
+        itemNames.add("Chair");
+        imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
+        itemNames.add("Chair");
+        InitializeRecyclerView();
+    }
+    private void InitializeRecyclerView(){
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, itemNames, imageURLs);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
 
