@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,7 +20,7 @@ import java.util.ArrayList;
 
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements RecyclerViewAdapter.OnItemListener {
 
     // Attributes for RecyclerView
     private ArrayList<String> itemNames = new ArrayList();
@@ -49,10 +50,16 @@ public class MainActivity extends AppCompatActivity {
     }
     private void InitializeRecyclerView(){
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, itemNames, imageURLs);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, itemNames, imageURLs, this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
 
+    @Override
+    public void onItemClick(int position) {
+        //itemNames.get(position);
+        Intent intent = new Intent(this, ItemScreen.class);
+        startActivity(intent);
+    }
 }
