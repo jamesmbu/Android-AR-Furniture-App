@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
         itemNames.add("Chair");
         imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
-        itemNames.add("Chair");
+        itemNames.add("Table");
         imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
         itemNames.add("Chair");
         imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
