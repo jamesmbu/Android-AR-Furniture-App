@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -43,9 +44,17 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
         imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
         itemNames.add("Table");
         imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
-        itemNames.add("Chair");
+        itemNames.add("Pot");
+        imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
+        itemNames.add("Lamp");
         imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
         itemNames.add("Chair");
+        imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
+        itemNames.add("Table");
+        imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
+        itemNames.add("Pot");
+        imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
+        itemNames.add("Lamp");
         InitializeRecyclerView();
     }
     private void InitializeRecyclerView(){
@@ -59,7 +68,10 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
     @Override
     public void onItemClick(int position) {
         //itemNames.get(position);
+        //Toast.makeText(this, itemNames.get(position), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, ItemScreen.class);
+        intent.putExtra("selected_itemName", itemNames.get(position));
+        intent.putExtra("selected_itemImage", imageURLs.get(position));
         startActivity(intent);
     }
 }
