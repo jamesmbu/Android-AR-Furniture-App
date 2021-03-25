@@ -116,20 +116,28 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
     private void InitializeBitmaps(){
         imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
         itemNames.add("Chair");
+        arURI.add("");
         imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
         itemNames.add("Table");
+        arURI.add("");
         imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
         itemNames.add("Pot");
+        arURI.add("");
         imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
         itemNames.add("Lamp");
+        arURI.add("");
         imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
         itemNames.add("Chair");
+        arURI.add("");
         imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
         itemNames.add("Table");
+        arURI.add("");
         imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
         itemNames.add("Pot");
+        arURI.add("");
         imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
         itemNames.add("Lamp");
+        arURI.add("");
         InitializeRecyclerView();
     }
     private void InitializeRecyclerView(){
