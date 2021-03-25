@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+    <data>
+        <variable
+            name="product"
+            type="com.teamapp16.furniturear.Product" />
+    </data>
+    
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,7 +14,8 @@
     android:layout_height="match_parent"
     tools:context=".ItemScreen">
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/view"
+        android:loadImage="@{product.productImage}"
         android:src="@mipmap/ic_launcher"
         android:layout_width="240dp"
         android:layout_height="240dp"
@@ -15,21 +24,24 @@
 
     <TextView
         android:id="@+id/name"
-        android:text="Sample Text"
+        android:text="@{product.productName}"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_below="@+id/image"
+        android:layout_below="@+id/view"
         android:textColor="#000"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="30dp"
         android:textSize="28sp"
         android:textStyle="bold"
         android:paddingVertical="20dp"/>
+
     <Button
-        android:text="AR View"
-        android:textSize="18dp"
+        android:id="@+id/Ar_Button"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:text="AR View"
+        android:textSize="18dp" />
 </RelativeLayout>
+</layout>

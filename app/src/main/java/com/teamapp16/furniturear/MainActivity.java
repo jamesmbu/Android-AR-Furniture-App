@@ -3,6 +3,7 @@ package com.teamapp16.furniturear;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.TypedArrayUtils;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,30 +28,33 @@ import com.google.ar.core.exceptions.UnavailableArcoreNotInstalledException;
 import com.google.ar.core.exceptions.UnavailableDeviceNotCompatibleException;
 import com.google.ar.core.exceptions.UnavailableSdkTooOldException;
 import com.google.ar.core.exceptions.UnavailableUserDeclinedInstallationException;
+import com.teamapp16.furniturear.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 
 public class MainActivity extends AppCompatActivity implements RecyclerViewAdapter.OnItemListener {
-
     // Attributes for RecyclerView
     private ArrayList<String> itemNames = new ArrayList();
     private ArrayList<String> imageURLs = new ArrayList();
     private ArrayList<String>arURI = new ArrayList();
     //____________________________
-
     private static final String Tag = MainActivity.class.getSimpleName();
 
     private  boolean InstallRequested;
     private Session session;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        // test data for recyclerview
-        InitializeBitmaps();
+        ActivityMainBinding activityMainBinding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(activityMainBinding.getRoot());
 
+        // test data for recyclerview
+        // InitializeBitmaps();
+        InitializeRecyclerView(activityMainBinding);
     }
 
     @Override
@@ -112,11 +116,67 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
 
     }// end of onStart
 
+    private List<Product> getProductList(){
+        List<Product> productList = new ArrayList<>();
 
+        productList.add(new Product(
+                "Computer Desk",
+                "https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png",
+                "https://github.com/oriconnage/GLTFModels/blob/Master/Simple_Desk/Desk.gltf?raw=true"));
+
+        productList.add(new Product(
+                "Computer Desk",
+                "https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png",
+                "https://github.com/oriconnage/GLTFModels/blob/Master/Simple_Desk/Desk.gltf?raw=true"));
+        productList.add(new Product(
+                "Computer Desk",
+                "https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png",
+                "https://github.com/oriconnage/GLTFModels/blob/Master/Simple_Desk/Desk.gltf?raw=true"));
+        productList.add(new Product(
+                "Computer Desk",
+                "https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png",
+                "https://github.com/oriconnage/GLTFModels/blob/Master/Simple_Desk/Desk.gltf?raw=true"));
+        productList.add(new Product(
+                "Computer Desk",
+                "https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png",
+                "https://github.com/oriconnage/GLTFModels/blob/Master/Simple_Desk/Desk.gltf?raw=true"));
+        productList.add(new Product(
+                "Computer Desk",
+                "https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png",
+                "https://github.com/oriconnage/GLTFModels/blob/Master/Simple_Desk/Desk.gltf?raw=true"));
+        productList.add(new Product(
+                "Computer Desk",
+                "https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png",
+                "https://github.com/oriconnage/GLTFModels/blob/Master/Simple_Desk/Desk.gltf?raw=true"));
+        productList.add(new Product(
+                "Computer Desk",
+                "https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png",
+                "https://github.com/oriconnage/GLTFModels/blob/Master/Simple_Desk/Desk.gltf?raw=true"));
+        productList.add(new Product(
+                "Computer Desk",
+                "https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png",
+                "https://github.com/oriconnage/GLTFModels/blob/Master/Simple_Desk/Desk.gltf?raw=true"));
+        productList.add(new Product(
+                "Computer Desk",
+                "https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png",
+                "https://github.com/oriconnage/GLTFModels/blob/Master/Simple_Desk/Desk.gltf?raw=true"));
+        productList.add(new Product(
+                "Computer Desk",
+                "https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png",
+                "https://github.com/oriconnage/GLTFModels/blob/Master/Simple_Desk/Desk.gltf?raw=true"));
+
+
+
+
+
+
+        return productList;
+    }
     private void InitializeBitmaps(){
         imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
-        itemNames.add("Chair");
-        arURI.add("");
+        itemNames.add("Computer Desk");
+        arURI.add("https://github.com/oriconnage/GLTFModels/blob/Master/Simple_Desk/Desk.gltf?raw=true");
+
         imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
         itemNames.add("Table");
         arURI.add("");
@@ -138,13 +198,14 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
         imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
         itemNames.add("Lamp");
         arURI.add("");
-        InitializeRecyclerView();
+
     }
-    private void InitializeRecyclerView(){
+    private void InitializeRecyclerView(ActivityMainBinding activityMainBinding){
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, itemNames, imageURLs, this);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter( getProductList());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.HORIZONTAL));
     }
 
 
@@ -153,8 +214,9 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
         //itemNames.get(position);
         //Toast.makeText(this, itemNames.get(position), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, ItemScreen.class);
-        intent.putExtra("selected_itemName", itemNames.get(position));
-        intent.putExtra("selected_itemImage", imageURLs.get(position));
+       // intent.putExtra("selected_itemName", getProductList());
+        //intent.putExtra("selected_itemImage", imageURLs.get(position));
+        //intent.putExtra("Selected_ArURI", arURI.get(position));
         startActivity(intent);
     }
 }
