@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -164,12 +165,6 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
                 "Computer Desk",
                 "https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png",
                 "https://github.com/oriconnage/GLTFModels/blob/Master/Simple_Desk/Desk.gltf?raw=true"));
-
-
-
-
-
-
         return productList;
     }
     private void InitializeBitmaps(){
@@ -202,7 +197,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
     }
     private void InitializeRecyclerView(ActivityMainBinding activityMainBinding){
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter( getProductList());
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter( getProductList(),this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.HORIZONTAL));
@@ -214,9 +209,9 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
         //itemNames.get(position);
         //Toast.makeText(this, itemNames.get(position), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, ItemScreen.class);
-       // intent.putExtra("selected_itemName", getProductList());
-        //intent.putExtra("selected_itemImage", imageURLs.get(position));
-        //intent.putExtra("Selected_ArURI", arURI.get(position));
+        intent.putExtra("selected_itemImage",getProductList().get(position).getProductImage());
+        intent.putExtra("selected_itemName", getProductList().get(position).getProductName());
+        intent.putExtra("Selected_ArURI", getProductList().get(position).getArURI());
         startActivity(intent);
     }
 }

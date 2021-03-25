@@ -52,10 +52,11 @@ public class Product {
     }
 
     @BindingAdapter("android:loadImage")
-    public static void loadImage(ImageView view , String productImage){
-        Glide.with(view)
+    public static void loadImage(ImageView imageView , String productImage){
+        Glide.with(imageView)
+               // .asBitmap()
                 .load(productImage)
-                .into(view);
+                .into(imageView);
     }
 
     @BindingAdapter("android:ArURI")

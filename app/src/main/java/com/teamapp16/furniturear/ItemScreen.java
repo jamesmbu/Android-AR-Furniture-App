@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.teamapp16.furniturear.databinding.ActivityItemScreenBinding;
 
 
 public class ItemScreen extends AppCompatActivity {
@@ -21,7 +22,9 @@ public class ItemScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_item_screen);
+        ActivityItemScreenBinding itemScreenBinding = ActivityItemScreenBinding.inflate(getLayoutInflater());
+        setContentView(itemScreenBinding.getRoot());
+
         HandleIntent();
 
         Button ActiveAr_button = findViewById(R.id.Ar_Button);
@@ -41,13 +44,14 @@ public class ItemScreen extends AppCompatActivity {
         );
     }
     private void HandleIntent(){
-        // Get Intents
+
+        //Get Intents
         String ItemName = getIntent().getStringExtra("selected_itemName");
         String ItemImageURL = getIntent().getStringExtra("selected_itemImage");
         ItemArURI = getIntent().getStringExtra("Selected_ArURI");
         // Get View references
         TextView NameTV = findViewById(R.id.name);
-        ImageView ItemImageView = findViewById(R.id.image);
+        ImageView ItemImageView = findViewById(R.id.imageView);
         // Link Intent data with Views
         NameTV.setText(ItemName);
         Glide.with(this)

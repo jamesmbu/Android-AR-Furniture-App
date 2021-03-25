@@ -26,10 +26,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private static final String TAG = "RecyclerViewAdapter";
     private List<Product> furnitureList;
+    private OnItemListener _OnItemListener;
 
-
-    public RecyclerViewAdapter(List<Product>furnitureList) {
+    public RecyclerViewAdapter(List<Product>furnitureList,OnItemListener onItemListener) {
         this.furnitureList = furnitureList;
+        this._OnItemListener = onItemListener;
     }
 
     @NonNull
@@ -37,7 +38,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         LayoutListeditemBinding layoutListeditemBinding = LayoutListeditemBinding.inflate(layoutInflater,parent,false);
-        return new ItemViewHolder(layoutListeditemBinding);
+        ActivityItemScreenBinding itemScreenBinding = ActivityItemScreenBinding.inflate(layoutInflater,parent,false);
+        return new ItemViewHolder(layoutListeditemBinding,itemScreenBinding,_OnItemListener);
     }
 
     @Override
@@ -78,19 +80,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
+        ActivityItemScreenBinding activityItemScreenBinding;
         LayoutListeditemBinding layoutListeditemBinding;
         OnItemListener onItemListener;
-     public ItemViewHolder( @NonNull LayoutListeditemBinding layoutListeditemBinding) {
+     public ItemViewHolder( @NonNull LayoutListeditemBinding layoutListeditemBinding,@NonNull ActivityItemScreenBinding activityItemScreenBinding, OnItemListener _onItemListener) {
             super(layoutListeditemBinding.getRoot());
             this.layoutListeditemBinding = layoutListeditemBinding;
-
-       /*     layoutListeditemBinding.image.setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View view) {
-                   // Intent intent = new Intent(ItemScreen.class);
-                }
-            });*/
+            this.onItemListener =_onItemListener;
+            this.activityItemScreenBinding = activityItemScreenBinding;
+            itemView.setOnClickListener(this);
      }
 
         @Override
