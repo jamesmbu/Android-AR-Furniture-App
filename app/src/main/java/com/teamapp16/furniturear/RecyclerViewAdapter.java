@@ -20,6 +20,7 @@ import java.util.ArrayList;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ItemViewHolder> {
     private ArrayList<String> _ImageNames = new ArrayList<>();
     private ArrayList<String> _ImageURLs = new ArrayList<>();
+    private ArrayList<String> _ARURI = new ArrayList<>();
     private Context _Context;
     private OnItemListener _OnItemListener;
 
