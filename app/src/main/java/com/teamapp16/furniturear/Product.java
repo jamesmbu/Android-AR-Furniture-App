@@ -12,17 +12,19 @@ import com.bumptech.glide.Glide;
 
 public class Product {
 
-
-
     private String productName;
     private String productImage;
     private String ArURI;
+    private String Description;
+    private float Price;
 
-    public Product(String productName,String productImage, String ArURI)
+    public Product(String productName,String productImage, String ArURI, String description ,float price)
     {
         this.productName = productName;
         this.productImage= productImage;
         this.ArURI = ArURI;
+        this.Description = description;
+        this.Price = price;
     }
 
 
@@ -49,6 +51,23 @@ public class Product {
 
     public void setArURI(String arURI) {
         ArURI = arURI;
+    }
+
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String description) {
+        Description = description;
+    }
+
+    public float getPrice() {
+        return Price;
+    }
+
+    public void setPrice(float price) {
+        Price = price;
     }
 
     @BindingAdapter("android:loadImage")

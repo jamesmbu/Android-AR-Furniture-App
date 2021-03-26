@@ -48,12 +48,17 @@ public class ItemScreen extends AppCompatActivity {
         //Get Intents
         String ItemName = getIntent().getStringExtra("selected_itemName");
         String ItemImageURL = getIntent().getStringExtra("selected_itemImage");
-        ItemArURI = getIntent().getStringExtra("Selected_ArURI");
+        ItemArURI = getIntent().getStringExtra("selected_ArURI");
+        String ItemDescription = getIntent().getStringExtra("selected_Description");
+
         // Get View references
         TextView NameTV = findViewById(R.id.name);
         ImageView ItemImageView = findViewById(R.id.imageView);
+
+
         // Link Intent data with Views
         NameTV.setText(ItemName);
+
         Glide.with(this)
                 .asBitmap()
                 .load(ItemImageURL)
