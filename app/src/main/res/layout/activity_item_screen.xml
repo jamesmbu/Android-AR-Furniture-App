@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="product"
+            type="com.teamapp16.furniturear.Product" />
+    </data>
+    
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ItemScreen">
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/imageView"
         android:src="@mipmap/ic_launcher"
         android:layout_width="240dp"
         android:layout_height="240dp"
@@ -15,21 +23,65 @@
 
     <TextView
         android:id="@+id/name"
-        android:text="Sample Text"
+        android:text="Item name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_below="@+id/image"
+        android:layout_below="@+id/imageView"
         android:textColor="#000"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="30dp"
         android:textSize="28sp"
         android:textStyle="bold"
         android:paddingVertical="20dp"/>
+
     <Button
-        android:text="AR View"
-        android:textSize="18dp"
+        android:id="@+id/Ar_Button"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:text="Try It In Your Room"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/DescriptionText"
+        android:layout_width="match_parent"
+        android:layout_height="217dp"
+        android:layout_above="@+id/Ar_Button"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="22dp"
+        android:text="TextView"
+        android:textAlignment="textStart" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="210dp"
+        android:layout_height="43dp"
+        android:layout_above="@+id/DescriptionText"
+        android:layout_below="@+id/name"
+        android:layout_marginTop="67dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="5dp"
+        android:layout_toStartOf="@+id/PriceTag"
+        android:text="Description"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/PriceTag"
+        android:layout_width="158dp"
+        android:layout_height="48dp"
+        android:layout_above="@+id/DescriptionText"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="1dp"
+        android:text="TextView"
+        android:textAlignment="textEnd"
+        android:textSize="24sp" />
+
 </RelativeLayout>
+</layout>
