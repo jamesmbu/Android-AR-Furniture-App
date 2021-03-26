@@ -54,7 +54,8 @@
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="22dp"
         android:text="TextView"
-        android:textAlignment="textStart" />
+        android:textAlignment="textStart"
+        android:paddingHorizontal="15dp"/>
 
     <TextView
         android:id="@+id/textView3"
@@ -66,6 +67,7 @@
         android:layout_marginEnd="36dp"
         android:layout_marginBottom="5dp"
         android:layout_toStartOf="@+id/PriceTag"
+        android:paddingLeft="10dp"
         android:text="Description"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="24sp"
@@ -79,9 +81,10 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="7dp"
         android:layout_marginBottom="1dp"
-        android:text="TextView"
+        android:text="Price"
         android:textAlignment="textEnd"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:paddingRight="10dp"/>
 
 </RelativeLayout>
 </layout>

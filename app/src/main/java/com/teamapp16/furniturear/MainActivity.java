@@ -142,13 +142,13 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
                 "https://github.com/oriconnage/GLTFModels/blob/Master/Antique_Bedroom_Table/antique_tall_bedroom_table_1320.gltf?raw=true",
                 " Antique bedside table with no drawers with structure veneered in exotic wood and inlaid with precious wood essences. \n " +
                         "Surmounted by a wooden top with an inlay in the center depicting an amphora with flowers and surrounded by light wood reserves.\n ",
-                560.0f));
+                560.00f));
         productList.add(new Product(
                 "Computer Desk",
                 "https://github.com/oriconnage/GLTFModels/raw/Master/Simple_Desk/TraditionalDesk.jpg",
                 "https://github.com/oriconnage/GLTFModels/blob/Master/Simple_Desk/Desk.gltf?raw=true",
                 "Nifty and nice. What a clever streamlined concept this computer desk is with all the benefits of an everyday desk and more ",
-                200.0f
+                200.00f
         ));
         //Lamp
         productList.add(new Product(
@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
                 "https://github.com/oriconnage/GLTFModels/raw/Master/Lamp/BedSideLamp.jpg",
                 "https://github.com/oriconnage/GLTFModels/blob/Master/Lamp/a_bedside_lamp_167%20(1).gltf?raw=true",
                 "Desk Lamp perfect for any room design",
-                100.0f));
+                100.00f));
 
         productList.add(new Product(
                 "Floor Lamp",
@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
                 "https://github.com/oriconnage/GLTFModels/blob/Master/floor%20Lamp/Tall_lamp.gltf?raw=true",
                 "Versatile in design, this plain chrome floor lamp can be used with any light shade and will suit a host of interiors. " +
                         "Crafted with a simple stem design, it will offer a practical benefit for your home, as it can easily be placed in any living area. ",
-                100.f));
+                100.00f));
         //Cabinet
         productList.add(new Product(
                 "Wood Cabinet",
@@ -172,38 +172,38 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
                 "https://github.com/oriconnage/GLTFModels/blob/Master/Ebony_Wood_Cabinet/wood_cabinet.glb?raw=true",
                 " designed to be both stylish and super functional, this Cabinet can be positioned to match interiors that are traditional or contemporary. " +
                         "This cabinet is sure to be the centerpiece of any room.",
-                1700.0f));
+                1700.00f));
         productList.add(new Product(
                 "Ottoman Storage Rectangle",
                 "https://github.com/oriconnage/GLTFModels/raw/Master/Ottoman_Storage_Rectangular/1000_F_210882180_iWVxfoqUOB1WIrL2lJ2DCvZibUxyjS0H.jpg",
                 "https://github.com/oriconnage/GLTFModels/blob/Master/Ottoman_Storage_Rectangular/rectangular_storage_ottoman_1444%20(1).gltf?raw=true",
                 "Traditional design gets an on-trend upgrade with this stylish storage ottoman. ",
-                456.0f));
+                456.00f));
         productList.add(new Product(
                 "Small Ottoman Storage",
                 "https://github.com/oriconnage/GLTFModels/raw/Master/Small_Ottoman_Storage/1000_F_210890734_Id7TjLsWFe3MQMALjjvvTQDaxUeiqFXy.jpg",
                 "https://github.com/oriconnage/GLTFModels/blob/Master/Small_Ottoman_Storage/small_ottoman_1450.gltf?raw=true",
                 "Traditional design gets an on-trend upgrade with this stylish storage ottoman. ",
-                345.0f));
+                345.00f));
 
         productList.add(new Product(
                 "Bookcase",
                 "https://github.com/oriconnage/GLTFModels/raw/Master/Bookcase/1000_F_212779774_ny1WCd5mbmsiuGpT3q0vpcu5KHKLETbs.jpg",
                 "https://github.com/oriconnage/GLTFModels/blob/Master/Bookcase/tall_tiered_bookcase_1383.gltf?raw=true",
                 "This stunning large bookcase will provide ample room for your collection of books. ",
-                400.0f));
+                400.00f));
 
         productList.add(new Product(
                 "Vintage Cushion Chair",
                 "https://github.com/oriconnage/GLTFModels/raw/Master/Vintage%20Cushioned_Chair/1000_F_210882464_ng6W5Ww13BBvcfgzWtvDELYy98rwOz41.jpg",
                 "https://github.com/oriconnage/GLTFModels/blob/Master/Vintage%20Cushioned_Chair/vintage_cushioned_chair_1318.gltf?raw=true",
                 "Vintage cushion chair perfect for you room. ",
-                100.0f));
+                100.00f));
 
         return productList;
     }
     // <-------not using this-------->
-    private void InitializeBitmaps(){
+   /* private void InitializeBitmaps(){
         imageURLs.add("https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png");
         itemNames.add("Computer Desk");
         arURI.add("https://github.com/oriconnage/GLTFModels/blob/Master/Simple_Desk/Desk.gltf?raw=true");
@@ -230,7 +230,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
         itemNames.add("Lamp");
         arURI.add("");
 
-    }
+    }*/
     private void InitializeRecyclerView(ActivityMainBinding activityMainBinding){
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         RecyclerViewAdapter adapter = new RecyclerViewAdapter( getProductList(),this);

@@ -1,38 +1,28 @@
 package com.teamapp16.furniturear;
 
-import android.content.Context;
-import android.content.Intent;
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.teamapp16.furniturear.databinding.ActivityItemScreenBinding;
 import com.teamapp16.furniturear.databinding.LayoutListeditemBinding;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ItemViewHolder> {
-
-
-    private static final String TAG = "RecyclerViewAdapter";
-    private List<Product> furnitureList;
+    private List<Product> furnitureList; // Stores a list of 'Products' where each product has a name, price, description, etc.
     private OnItemListener _OnItemListener;
 
-    public RecyclerViewAdapter(List<Product>furnitureList,OnItemListener onItemListener) {
+    public RecyclerViewAdapter(List<Product>furnitureList, OnItemListener onItemListener) {
         this.furnitureList = furnitureList;
         this._OnItemListener = onItemListener;
     }
 
+    // Inflation of view
     @NonNull
     @Override
     public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -42,6 +32,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return new ItemViewHolder(layoutListeditemBinding,itemScreenBinding,_OnItemListener);
     }
 
+    // Binding data with a respective view holder child
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, final int position) {
 
@@ -78,18 +69,20 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         //return _ImageNames.size();
     }
 
+    // Blueprint of an item's view and metadata
     public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ActivityItemScreenBinding activityItemScreenBinding;
         LayoutListeditemBinding layoutListeditemBinding;
         OnItemListener onItemListener;
-     public ItemViewHolder( @NonNull LayoutListeditemBinding layoutListeditemBinding,@NonNull ActivityItemScreenBinding activityItemScreenBinding, OnItemListener _onItemListener) {
+
+        public ItemViewHolder( @NonNull LayoutListeditemBinding layoutListeditemBinding,@NonNull ActivityItemScreenBinding activityItemScreenBinding, OnItemListener _onItemListener) {
             super(layoutListeditemBinding.getRoot());
             this.layoutListeditemBinding = layoutListeditemBinding;
             this.onItemListener =_onItemListener;
             this.activityItemScreenBinding = activityItemScreenBinding;
             itemView.setOnClickListener(this);
-     }
+        }
 
         @Override
         public void onClick(View v) {
