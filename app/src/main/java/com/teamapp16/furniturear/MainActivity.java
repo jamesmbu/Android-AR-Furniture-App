@@ -67,8 +67,9 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
 
     @Override
     public void onItemClick(int position) {
-        //itemNames.get(position);
         //Toast.makeText(this, itemNames.get(position), Toast.LENGTH_SHORT).show();
+
+        // Initialise an Intent, supply data, start the new activity
         Intent intent = new Intent(this, ItemScreen.class);
         intent.putExtra("selected_itemName", itemNames.get(position));
         intent.putExtra("selected_itemImage", imageURLs.get(position));
