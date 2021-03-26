@@ -53,22 +53,35 @@
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="22dp"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textAlignment="textStart" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="208dp"
-        android:layout_height="66dp"
+        android:layout_width="210dp"
+        android:layout_height="43dp"
         android:layout_above="@+id/DescriptionText"
         android:layout_below="@+id/name"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="43dp"
-        android:layout_marginEnd="201dp"
+        android:layout_marginTop="67dp"
+        android:layout_marginEnd="36dp"
         android:layout_marginBottom="5dp"
+        android:layout_toStartOf="@+id/PriceTag"
         android:text="Description"
-        android:textAlignment="viewStart"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="24sp"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/PriceTag"
+        android:layout_width="158dp"
+        android:layout_height="48dp"
+        android:layout_above="@+id/DescriptionText"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="1dp"
+        android:text="TextView"
+        android:textAlignment="textEnd"
+        android:textSize="24sp" />
 
 </RelativeLayout>
 </layout>

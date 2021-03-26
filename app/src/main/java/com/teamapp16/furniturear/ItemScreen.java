@@ -50,15 +50,19 @@ public class ItemScreen extends AppCompatActivity {
         String ItemImageURL = getIntent().getStringExtra("selected_itemImage");
         ItemArURI = getIntent().getStringExtra("selected_ArURI");
         String ItemDescription = getIntent().getStringExtra("selected_Description");
+        Integer ItemPrice = getIntent().getIntExtra ("price",100);
 
         // Get View references
         TextView NameTV = findViewById(R.id.name);
         ImageView ItemImageView = findViewById(R.id.imageView);
 
+        TextView descriptionTV = findViewById(R.id.DescriptionText);
+        TextView Price = findViewById(R.id.PriceTag);
 
         // Link Intent data with Views
         NameTV.setText(ItemName);
-
+        descriptionTV.setText(ItemDescription);
+        Price.setText("£"+ItemPrice.toString());
         Glide.with(this)
                 .asBitmap()
                 .load(ItemImageURL)
