@@ -50,7 +50,7 @@ public class ItemScreen extends AppCompatActivity {
         String ItemImageURL = getIntent().getStringExtra("selected_itemImage");
         ItemArURI = getIntent().getStringExtra("selected_ArURI");
         String ItemDescription = getIntent().getStringExtra("selected_Description");
-        Integer ItemPrice = getIntent().getIntExtra ("price",100);
+        Float ItemPrice = getIntent().getFloatExtra ("price",100);
 
         // Get View references
         TextView NameTV = findViewById(R.id.name);

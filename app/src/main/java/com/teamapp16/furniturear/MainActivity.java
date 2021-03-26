@@ -128,13 +128,13 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
                 "If you are looking for a distinctive piece of upholstered furniture which will transform your living room Ark chair will certianly be a good choice. \n" +
                         "Its comfortable, loose seat, as well as loose backrest cushions will ensure pleasant moments spent by the television with a cup of coffee or with your loved ones.\n " +
                         "Its classic form, supported on beech wood legs, will be an ideal addition to any interior." ,
-                100.0f));
+                340.0f));
         productList.add(new Product(
                 "Sofa Arm chair",
                 "https://github.com/oriconnage/GLTFModels/raw/Master/Sofa/SofaImage.png",
                 "https://github.com/oriconnage/GLTFModels/blob/Master/Sofa/sofa.gltf?raw=true",
                 "a perfect compact sofa range with clean lines and tailored twin seam detail on the slim arms.",
-                100.0f));
+                150.0f));
         //Table
         productList.add(new Product(
                 "Antique Bedroom Table",
@@ -142,13 +142,13 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
                 "https://github.com/oriconnage/GLTFModels/blob/Master/Antique_Bedroom_Table/antique_tall_bedroom_table_1320.gltf?raw=true",
                 " Antique bedside table with no drawers with structure veneered in exotic wood and inlaid with precious wood essences. \n " +
                         "Surmounted by a wooden top with an inlay in the center depicting an amphora with flowers and surrounded by light wood reserves.\n ",
-                100.0f));
+                560.0f));
         productList.add(new Product(
                 "Computer Desk",
                 "https://github.com/oriconnage/GLTFModels/raw/Master/Simple_Desk/TraditionalDesk.jpg",
                 "https://github.com/oriconnage/GLTFModels/blob/Master/Simple_Desk/Desk.gltf?raw=true",
                 "Nifty and nice. What a clever streamlined concept this computer desk is with all the benefits of an everyday desk and more ",
-                100.0f
+                200.0f
         ));
         //Lamp
         productList.add(new Product(
@@ -172,26 +172,26 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
                 "https://github.com/oriconnage/GLTFModels/blob/Master/Ebony_Wood_Cabinet/wood_cabinet.glb?raw=true",
                 " designed to be both stylish and super functional, this Cabinet can be positioned to match interiors that are traditional or contemporary. " +
                         "This cabinet is sure to be the centerpiece of any room.",
-                100.0f));
+                1700.0f));
         productList.add(new Product(
                 "Ottoman Storage Rectangle",
                 "https://github.com/oriconnage/GLTFModels/raw/Master/Ottoman_Storage_Rectangular/1000_F_210882180_iWVxfoqUOB1WIrL2lJ2DCvZibUxyjS0H.jpg",
                 "https://github.com/oriconnage/GLTFModels/blob/Master/Ottoman_Storage_Rectangular/rectangular_storage_ottoman_1444%20(1).gltf?raw=true",
                 "Traditional design gets an on-trend upgrade with this stylish storage ottoman. ",
-                100.0f));
+                456.0f));
         productList.add(new Product(
                 "Small Ottoman Storage",
                 "https://github.com/oriconnage/GLTFModels/raw/Master/Small_Ottoman_Storage/1000_F_210890734_Id7TjLsWFe3MQMALjjvvTQDaxUeiqFXy.jpg",
                 "https://github.com/oriconnage/GLTFModels/blob/Master/Small_Ottoman_Storage/small_ottoman_1450.gltf?raw=true",
                 "Traditional design gets an on-trend upgrade with this stylish storage ottoman. ",
-                100.0f));
+                345.0f));
 
         productList.add(new Product(
                 "Bookcase",
                 "https://github.com/oriconnage/GLTFModels/raw/Master/Bookcase/1000_F_212779774_ny1WCd5mbmsiuGpT3q0vpcu5KHKLETbs.jpg",
                 "https://github.com/oriconnage/GLTFModels/blob/Master/Bookcase/tall_tiered_bookcase_1383.gltf?raw=true",
                 "This stunning large bookcase will provide ample room for your collection of books. ",
-                100.0f));
+                400.0f));
 
         productList.add(new Product(
                 "Vintage Cushion Chair",
